@@ -1,4 +1,5 @@
 function marquee(options){ 
+	let fc,cn;
 	if(!options){ 
 		throw new Error("Missing parameter"); 
 	return false; 
@@ -6,7 +7,8 @@ function marquee(options){
 	var id = options.id, 
 		delay = options.delay || '0.6s', 
 		timingFunction = options.timingFunction || 'ease', 
-		interval = options.interval || 1000; 
+		interval = options.interval || 1000,
+	    	scale = options.scale || 1; 
 	if(!id){ 
 		throw new Error("Missing id"); 
 		return false; 
@@ -18,7 +20,7 @@ function marquee(options){
 		cn = fc.cloneNode(true); 
 		element.appendChild(cn); 
 		element.style.transition = 'top '+ delay + ' ' + timingFunction; 
-		element.style.top = '-'+ element_height +'px'; 
+		element.style.top = '-'+ element_height*scale +'px'; 
 		setTimeout(function(){ 
 			element.removeChild(fc); 
 			element.style.transition = 'none'; 
