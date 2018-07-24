@@ -9,6 +9,7 @@
 *options.delay          动画延迟时间
 *options.timingFunction 动画渐变方法
 *options.interval       循环时间
+*options.scale          滚动元素用css3 scale方法缩放过的比例
 **
 marquee(options);
 ```
